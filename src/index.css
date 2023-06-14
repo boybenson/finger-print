@@ -1,0 +1,22 @@
+.header {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 4px;
+  border: none;
+}
+
+.btn:hover {
+  box-shadow: 1px;
+  cursor: pointer;
+  border: 1px solid gray;
+}
