@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .header {
   width: 100vw;
   display: flex;
@@ -19,4 +23,14 @@
   box-shadow: 1px;
   cursor: pointer;
   border: 1px solid gray;
+}
+
+.finger_print {
+  width: 100vw;
+  margin-top: 100px;
+}
+
+.data {
+  width: 85%;
+  margin: 0 auto;
 }

@@ -1,9 +1,18 @@
 import { useState } from "react";
+import Table from "./Table";
 
 const App = () => {
   const [fingerPrint, setFingerPrint] = useState(null);
 
-  const handleGetFingerPrint = () => {};
+  const handleGetFingerPrint = () => {
+    const data: any = {};
+    data.userAgent = navigator.userAgent;
+    data.appVersion = navigator.appVersion;
+    data.langugae = navigator.language;
+
+    console.log(navigator);
+    setFingerPrint(data);
+  };
 
   return (
     <>
@@ -24,7 +33,13 @@ const App = () => {
         </div>
       </header>
 
-      <div></div>
+      <div className="finger_print">
+        {fingerPrint && (
+          <div className="data">
+            <Table />
+          </div>
+        )}
+      </div>
     </>
   );
 };
