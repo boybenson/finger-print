@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Table from "./Table";
+import Canvas from "./Canvas";
 
 const App = () => {
   const [fingerPrint, setFingerPrint] = useState(null);
@@ -36,6 +37,9 @@ const App = () => {
       <div className="finger_print">
         {fingerPrint && (
           <div className="data">
+            <div className="flex items-center justify-center">
+              <Canvas />
+            </div>
             <Table />
           </div>
         )}
