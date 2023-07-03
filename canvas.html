@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>canvas</title>
+  </head>
+  <body>
+    <b>Hash:</b> <span id="hash-code"></span><br />
+    <canvas
+      id="myCanvas"
+      width="200"
+      height="40"
+      style="border: 1px"
+      solid
+      #000000;
+    ></canvas>
+
+    <script>
+      var canvas = document.getElementById("myCanvas");
+
+      var ctx = canvas.getContext("2d");
+      ctx.fillStyle = "rgb(255,0,255)";
+      ctx.beginPath();
+      ctx.rect(20, 20, 150, 100);
+      ctx.fill();
+      ctx.stroke();
+      ctx.closePath();
+      ctx.beginPath();
+      ctx.fillStyle = "rgb(0,255,255)";
+      ctx.arc(50, 50, 50, 0, Math.PI * 2, true);
+      ctx.fill();
+      ctx.stroke();
+      ctx.closePath();
+      txt = "abz190#$%ˆ@£éú";
+      ctx.textBaseline = "top";
+      ctx.font = "17px “Arial 17”";
+      ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = "rgb(255,5,5)";
+      ctx.rotate(0.03);
+      ctx.fillText(txt, 4, 17);
+
+      //hashing function
+      src = canvas.toDataURL();
+
+      hash = 0;
+      for (i = 0; i < src.length; i++) {
+        char = src.charCodeAt(i);
+        hash = (hash << 5) - hash + char;
+        hash = hash & hash;
+      }
+      //output this however you want
+
+      document.getElementById("hash-code").textContent = hash;
+
+      //   $("hash-code").html(hash);
+    </script>
+  </body>
+</html>
