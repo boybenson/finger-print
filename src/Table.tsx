@@ -1,4 +1,6 @@
 export default function Table() {
+  const nav: any = navigator;
+  console.log(nav.deviceMemory);
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="mt-8 flow-root">
@@ -74,6 +76,38 @@ export default function Table() {
                   </td>
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                     {navigator.language}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                    Vendor
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    {navigator.vendor}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                    Local Storage
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    true
+                  </td>
+                </tr>
+                <tr>
+                  <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                    Session Storage
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    true
+                  </td>
+                </tr>
+                <tr>
+                  <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                    Device Memory
+                  </td>
+                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                    {nav.deviceMemory}
                   </td>
                 </tr>
               </tbody>
